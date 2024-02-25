@@ -16,10 +16,8 @@ class ListSeriesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_list_series)
 
-        // Initialisation du ViewModel
         listSeriesViewModel = ViewModelProvider(this).get(ListSeriesViewModel::class.java)
 
-        // Exemple de données (à remplacer par vos données réelles)
         val series = listOf(
             Serie(
                 title = "Titre de la série",
@@ -47,12 +45,8 @@ class ListSeriesActivity : AppCompatActivity() {
             )
         )
 
-        // Mise à jour du ViewModel avec les données
         listSeriesViewModel.series = series
 
-        // Mise à jour de l'interface utilisateur
-
-        // Mise à jour du recycler_series
         val recycle_serie = findViewById<View>(R.id.recycler_series) as RecyclerView
         recycle_serie.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recycle_serie.adapter = SerieAdapter(listSeriesViewModel.series)
