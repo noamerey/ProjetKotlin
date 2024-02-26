@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/navigation_list_series"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_list_series" />
+        tools:layout="@layout/fragment_list_series" >
+        <action
+            android:id="@+id/action_navigation_list_series_to_navigation_serie"
+            app:destination="@id/navigation_serie" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_serie"
